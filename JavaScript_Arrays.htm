@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Add Ends</title>
+
+<script type="text/javascript">
+
+/* Processing: Create button that calls function to create a random array(list)
+* Processing: Create button that adds the first and last numbers of the array(list)
+* Store the value returned by funtion addEnds() in a variable.
+* Output: Display the result to the user.
+*/
+function createArray()
+{
+// create var length with a random number between 2 - 100
+var length = Math.floor((Math.random() * 100) + 2);
+// create array list with random variable length
+var list = new Array(length);
+// declare variable ran = random
+var ran = 0;
+	// create for loop to fill list array
+	for (var i = 0; i < list.length; i++) {
+		// fill array(list) with random number between 1-100 for each index
+		ran = Math.floor((Math.random() * 100) + 1);
+		list[i] = ran;
+	}
+addEnds(list);
+}
+
+function addEnds(list)
+{
+// create var sum to add the first and last indexes in the array
+var sum = list[0] + list[list.length - 1];
+document.getElementById("resultOutput").innerHTML = sum;
+}
+
+</script>
+</head>
+
+<body>
+<h1> Arrays </h1>
+<p>Using Loops, this will create a random array list and then adds the first and last numbers of the array list</p>
+<p>It will then display the output. Click the buttom to call the javascript function</p>
+<br>
+<h1>Add Ends</h1>
+<br>
+<button type="button" onclick="createArray()">Add Ends</button>
+<br>
+<div id="resultOutput"></div>
+</body>
+</html>
